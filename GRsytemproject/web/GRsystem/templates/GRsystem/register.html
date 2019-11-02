@@ -1,0 +1,33 @@
+{% extends "GRsystem/index.html" %}
+.container-fluid
+{
+    width="500px";
+}
+
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container width:50%">
+    <div class="content-section">
+    <br>
+    
+        <form method="POST">
+            
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Register Here!!!</legend>
+                {% csrf_token %}
+                {{ form|crispy }}
+                {{profile_form|crispy}}
+              
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Sign Up</button>
+            </div>
+        </form>
+        <div class="border-top pt-3">
+            <small class="text-muted">
+                Already Have An Account? <a class="ml-2" href="{% url 'login' %}">Sign In</a>
+            </small>
+        </div>
+    </div>
+    </div>
+{% endblock content %}

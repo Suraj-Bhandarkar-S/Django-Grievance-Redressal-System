@@ -1,0 +1,208 @@
+{% extends "GRsystem/index.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+
+<style>
+
+
+td.color_1{ background-color: #7FFF00; }
+td.color_2{ background-color: yellow; }
+td.color_3{ background-color: red; }
+table {
+    counter-reset: tableCount;     
+}
+.counterCell:before {              
+    content: counter(tableCount); 
+    counter-increment: tableCount; 
+}
+.form-required { display: none; }
+.requiredField
+{
+  display:none;
+}
+.alert
+{
+  width:400px;
+}
+th{
+   font-size:16px;
+   font-family:Arial;
+}
+
+</style>
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>All Complaints</title>
+   
+  <!-- Bootstrap core CSS -->
+  <link href= "{% static "GRsystem/extra/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="{% static "GRsystem/css/simple-sidebar.css" %}" rel="stylesheet">
+
+</head>
+
+<body style="background: #8E2DE2;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #4A00E0, #4A00E0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+"
+>
+
+  <div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading">GRsystem</div>
+      <div class="list-group list-group-flush">
+        {% if user.is_authenticated  %}
+			 
+               <a href="" class="list-group-item list-group-item-action active"> Welcome : {{user.first_name}} </a>
+              <a href='/counter/' class="list-group-item list-group-item-action">Statistics</a>
+             
+              <a href='/passwords/' class="list-group-item list-group-item-action">Password Reset</a>
+
+              
+              <a href="/allcomplaints/" class="list-group-item list-group-item-action">Complaints</a>
+              <a href="/solved/" class="list-group-item list-group-item-action">Solved</a>
+
+              {% endif %}
+              
+      </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+     
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <button class="btn btn-primary" id="menu-toggle">DashBoard</button>
+       &nbsp;&nbsp;&nbsp;&nbsp;
+       </nav>
+       <br>
+ <div class="col-12">
+		    <div class="card">
+		        <div class="card-body">
+		            <div class="row">
+		                <div class="col-md-3">
+		                    <h4 class="text-primary"><b>Statistics</b></h4>
+							
+		                    <hr>
+           
+		                </div>
+						
+		            </div>
+                    <center>
+		            <div class="row m-1">
+		             
+
+    <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Total Complaints:</h5>
+    <br>
+    
+    <h1 class="card-subtitle mb-2 text-muted">{{ total }}</h1>
+    
+  
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">UnSolved Complaints:</h5>
+    <br>
+    
+    <h1 class="card-subtitle mb-2 text-muted">{{ unsolved }}</h1>
+    
+   
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Solved Complaints:</h5>
+   <br>
+    
+    <h1 class="card-subtitle mb-2 text-muted">{{ solved}}</h1>
+    
+  </div>
+</div>
+</div>
+            
+		        </div>
+                <div id="container"></div>
+              <br>
+          </div>
+    </div>
+  <script src="https://code.highcharts.com/highcharts.src.js"></script>
+  <script>
+    Highcharts.chart('container', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Complaints Statistics'
+        },
+        
+        xAxis: {
+          categories: [
+            {% for entry in dataset %}'{{ entry.Type_of_complaint }}'{% if not forloop.last %}, {% endif %}{% endfor %}
+          ]
+        },
+          yAxis: {
+        
+           title: {
+        text: 'Number of Complaints'
+    },
+           
+          
+        },
+        series: [{
+          name: 'Total',
+          data: [
+            {% for entry in dataset %}{{ entry.total }}{% if not forloop.last %}, {% endif %}{% endfor %}
+          ],
+          color: 'Orange'
+      },
+        {
+          name: 'Solved',
+          data: [
+            {% for entry in dataset %}{{ entry.solved }}{% if not forloop.last %}, {% endif %}{% endfor %}
+          ],
+          color: 'green'
+      }, {
+          name: 'UnSolved',
+          data: [
+            {% for entry in dataset %}{{ entry.notsolved }}{% if not forloop.last %}, {% endif %}{% endfor %}
+          ],
+          color: 'red'
+      },
+      {
+          name: 'Inprogress',
+          data: [
+            {% for entry in dataset %}{{ entry.inprogress }}{% if not forloop.last %}, {% endif %}{% endfor %}
+          ],
+          color: 'yellow'
+      }
+      ]
+    });
+  </script>
+ <br>
+ <br>
+	
+    
+
+  <!-- Menu Toggle Script -->
+  <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+  </script>
+
+		
+{% endblock content %}
+

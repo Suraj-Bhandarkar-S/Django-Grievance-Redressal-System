@@ -1,0 +1,23 @@
+{% extends "GRsystem/index1.html" %}
+
+<head>
+<style>
+
+.page-footer{
+background-color:#00d1fb;
+bottom:0px;
+top:900px;
+position:relative;
+}
+</style> 
+</head>
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container"
+    <div class="content-section">
+      
+          <h2 class="account-heading">{{ user.username }}</h2>
+          <p class="text-secondary">{{ user.email }}{{ request.sessions.user.username }}</p>
+        </div>
+    </div>
+{% endblock content %}

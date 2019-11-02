@@ -1,0 +1,18 @@
+{% extends "GRsystem/index.html" %}
+
+
+
+{% block content %}
+<br>
+<br>
+<div  class="container">
+       <h2>You have been logged out</h2>
+    <div class="border-top pt-3">
+        <small class="text-muted">
+        <a  class="btn btn-primary text-light" href="{% url 'login' %}">Log In Again</a>
+        </small>
+    </div>
+
+      
+      
+  {% endblock content %}

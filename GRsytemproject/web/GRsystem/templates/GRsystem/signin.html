@@ -1,0 +1,49 @@
+{% extends "GRsystem/index.html" %}
+
+
+		body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+ 
+}
+
+
+	
+{% load crispy_forms_tags %}
+{% block content %}
+<br>
+<div class="container">
+  {% load static %}
+      {% for message in messages %}
+	   <div{% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %}>
+	   <a class="close" data-dismiss="alert" href="#">&times;</a>
+      {{ message }}
+    </div>
+	{% endfor %}
+      <div class="container">
+        <div class="content-section">
+        <form method="POST" >
+            {% csrf_token %}
+{% if user.is_authenticated %}
+           <h3> You are already logged In. First logout,To switch account?</h3>
+           
+        	{% else %}
+           <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Log In</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Login</button>
+            </div>
+           
+        </form>
+        <div class="border-top pt-3">
+            <small>
+                Need An Account? <a class="ml-2" href="{% url 'register' %}">Sign Up Now</a> <div class="text-muted ">
+                    <a href="{% url 'password_reset' %}">Forgot Password?</a>
+                </div>
+            </small>
+        </div>
+          	 {% endif %}
+    </div>
+{% endblock content %}
