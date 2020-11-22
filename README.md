@@ -1,4 +1,4 @@
-## Grievance Redressal System
+##Grievance Redressal System
 
 # Introduction
 1. The Website is developed for a college having its own Grievance Redressal Systemin an informal manner i.e. through direct supervision of the principal and managingdirector earlier. 
