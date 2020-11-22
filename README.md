@@ -22,7 +22,12 @@
 # Djnago commands :
 ```
 pip install django
+pip3 install -r requirements.txt (Python 3)
 
+python djnango makemigrations
+python django migrate
+
+# Data base used postgresql
 ```
 
 # Project Images:
