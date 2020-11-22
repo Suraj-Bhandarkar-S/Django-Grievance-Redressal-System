@@ -1,4 +1,4 @@
-##Grievance Redressal System
+# Grievance Redressal System
 
 # Introduction
 1. The Website is developed for a college having its own Grievance Redressal Systemin an informal manner i.e. through direct supervision of the principal and managingdirector earlier. 
@@ -21,3 +21,5 @@
 
 
 # Project Images:
+Home Page
+![Home](https://user-images.githubusercontent.com/42907076/99896208-5fec7700-2cb4-11eb-96e2-9fc0ef58f76a.png)
