@@ -19,7 +19,7 @@
 1.	To solve Grievances that has been submitted through the application which has been issued by the users in the most efficient way possible.
 2.	To ensure transparency in institutions imparting technical education, with the supreme objective of preventing unfair practices and to provide a mechanism to students, parents, teachers and other non-teaching staff for the redressal of their complaints.
 
-# Djnago commands :
+# Djnago commands
 ```
 pip install django
 pip3 install -r requirements.txt (Python 3)
@@ -27,9 +27,12 @@ pip3 install -r requirements.txt (Python 3)
 python djnango makemigrations
 python django migrate
 
-# Data base used postgresql
 ```
+# DataBase
 
+```
+postgresq
+```
 # Project Images:
 ## Home Page
 > ![Home](https://user-images.githubusercontent.com/42907076/99896208-5fec7700-2cb4-11eb-96e2-9fc0ef58f76a.png)
