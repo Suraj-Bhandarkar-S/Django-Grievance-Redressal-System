@@ -150,7 +150,7 @@ def complaints(request):
                instance.user=request.user
                mail=request.user.email
                print(mail)
-               send_mail('Complaint has been Issued', 'Thank you for letting us know of your concern, and for your patience while we explore into this matter.', 'testerpython13@gmail.com', [mail],fail_silently=False)
+               send_mail('Hi \n Complaint has been Received', 'Thank you for letting us know of your concern, Have a Cookie while we explore into this matter. \n Dont Reply to this mail', 'testerpython13@gmail.com', [mail],fail_silently=False)
                instance.save()
                
                messages.add_message(request,messages.SUCCESS, f'Complaint Registered!!!')
@@ -204,7 +204,7 @@ def allcomplaints(request):
                        
                       
                         print(m)
-                        send_mail('Complaint has been Resolved ', 'Thank you for letting us know of your concern, Hope we have solved your issue.', 'testerpython13@gmail.com', [m],fail_silently=False)
+                        send_mail('Hi, \n Complaint has been Resolved ', 'Thanks for letting us know of your concern, \n Hope we have solved your issue. \n Dont Reply to this mail', 'testerpython13@gmail.com', [m],fail_silently=False)
                         obj.save()
                         messages.add_message(request,messages.SUCCESS, f'Complaint Updated!!!')
                         return HttpResponseRedirect(reverse('allcomplaints'))

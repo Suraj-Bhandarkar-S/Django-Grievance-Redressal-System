@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'reportlab',
     'phonenumber_field', 
-     'django_extensions',  
+    'django_extensions',  
 ]
 
 MIDDLEWARE = [
@@ -88,12 +88,18 @@ WSGI_APPLICATION = 'web.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+
         'NAME': 'webdata',
-        'USER':'root',
-        'PASSWORD':'',
-        'HOST':'localhost',
-        'PORT':'',
+
+        'USER': 'postgres',
+
+        'PASSWORD': 'grsystembase',
+
+        'HOST': 'localhost',
+
+        'PORT': '5432',
     }
 }
 
@@ -160,7 +166,7 @@ AUTHENTICATION_BACKENDS = (
     # `allauth` specific authentication methods, such as login by e-mail
     "allauth.account.auth_backends.AuthenticationBackend",
 )
-SITE_ID=0
+SITE_ID=3
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
