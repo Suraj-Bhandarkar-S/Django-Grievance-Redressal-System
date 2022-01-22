@@ -95,7 +95,7 @@ DATABASES = {
 
         'USER': 'postgres',
 
-        'PASSWORD': 'grsystembase',
+        'PASSWORD': 'admin',
 
         'HOST': 'localhost',
 
