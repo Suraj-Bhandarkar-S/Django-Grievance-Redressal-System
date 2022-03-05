@@ -2,6 +2,8 @@
 
 If any one needs help on the project or getting error you can reach out to me suraj.bhandarkar13@gmail.com
 
+Watch the Video on how to set up the project: https://youtu.be/2IZ5bN7t9nY
+
 # Introduction
 1. The Website is developed for a college having its own Grievance Redressal Systemin an informal manner i.e. through direct supervision of the principal and managingdirector earlier. 
 2.  But in formal sense a website is to be developed which will control the grievance redressal system online. 
