@@ -5,7 +5,7 @@ If any one needs help on the project or getting error you can reach out to me su
 Watch the Video on how to set up the project: https://youtu.be/2IZ5bN7t9nY
 
 # Introduction
-1. The Website is developed for a college having its own Grievance Redressal Systemin an informal manner i.e. through direct supervision of the principal and managingdirector earlier. 
+1. The Website is developed for a college Grievance Redressal System in an informal manner i.e. through direct supervision of the principal and managing director earlier. 
 2.  But in formal sense a website is to be developed which will control the grievance redressal system online. 
 3.	The function of the website cell is to look into the complaints raised by any student or staff, and judge its merit. 
 4.	The Grievance cell is also empowered to look into matters of harassment. Anyone with a genuine grievance can register and submit their complaint which will be approached by the department members in person, or in consultation with the officer in-charge Students Grievance Cell. 
